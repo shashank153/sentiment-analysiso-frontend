@@ -169,7 +169,7 @@ function getSentimentScore(text) {
 }
 
 function getTwitterHashTagData(query, callback) {
-  fetch(twitterapical + '/' + query)//proxyurl + twitterapical + '/' + query
+  fetch(proxyurl + twitterapical + '/' + query)//proxyurl + twitterapical + '/' + query
     .then((res) => {
       return res.json();
     })
