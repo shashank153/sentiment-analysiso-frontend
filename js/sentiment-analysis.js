@@ -1,6 +1,6 @@
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const twitterapical =
-  "https://sentiment-analysis-backend-v1.herokuapp.com/getTweetData";
+  "https://sentiment-analysis-backend-v1.herokuapp.com/";
 
 const HOSTED_URLS = {
   queryTwitter: "../php/queryTwitter.php",
@@ -169,7 +169,7 @@ function getSentimentScore(text) {
 }
 
 function getTwitterHashTagData(query, callback) {
-  fetch(proxyurl + twitterapical + '/' + query)
+  fetch(proxyurl + twitterapical + '/' + query)//proxyurl + twitterapical + '/' + query
     .then((res) => {
       return res.json();
     })
