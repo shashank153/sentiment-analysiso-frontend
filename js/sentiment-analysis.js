@@ -47,7 +47,7 @@ async function setupSentimentModel() {
 }
 
 function twitterSentiment() {
-  console.log("Hello Rohit")
+  console.log("Hello World")
   $('#tweet-list').addClass('d-none');
   $('#positive').empty();
   $('#neutral').empty();
