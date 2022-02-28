@@ -117,3 +117,7 @@ footer p{
     font-family: 'Poppins';
     font-size: 1rem;
 }
+
+#sentiment-analysis{
+    padding: 100px 0 280px 0;
+}
