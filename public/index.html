@@ -1,18 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Twitter Sentiment Analysis</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='style/sentiment-analysis.css'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Sentiment Analysis Frontend Design V1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -24,27 +29,41 @@
 
 <body>
     <main>
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1>Twitter Sentiment Analysis</h1>
+        <!-- Navbar section -->
+        <section id="navbar-section">
+            <div class="navbar navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a href="" class="navbar-brand">Twitter Sentiment Analysis</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 info-text">
-                    Type in any hashtag or keyword and press enter to visualize Tweet Sentiment.
+        </section>
+
+        <!-- Banner section -->
+        <section id="banner-section">
+            <div class="container-fluid banner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="./images/twitter-banner.png" id="twitter-banner" alt="twitter-banner-image">
+                    </div>
+                    <div class="col-md-6 right-part">
+                        <div>
+                            <h1><span id="twitter">Twitter</span> Sentiment Analalysis</h1>
+                            <p>Type in any hashtag or keyword and press enter to visualize Tweet Sentiment.</p>
+                        </div>
+                        <div>
+                            <span id="hash">#</span>
+                            <input id="textField" data-intro="Enter in the any twitter hashtag here"
+                                data-position="right" type="text" id="tag-input" placeholder="Enter in a hashtag here"
+                                name="input-tag">
+                            <button class="btn btn-lg btn-dark btn-search">Search</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 input-field">
-                    <i class="material-icons prefix">#</i>
-                    <input data-intro="Enter in the any twitter hashtag here" data-position="right" type="text"
-                        id="tag-input" placeholder="Enter in a hashtag here" name="input-tag">
-                    <button class="btn btn-dark btn-search">
-                        Search
-                    </button>
-                </div>
-            </div>
+        </section>
+
+        <!-- Sentiment analysis section -->
+        <section>
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="spinner-border text-primary d-none" role="status">
@@ -87,11 +106,143 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+
+        <!-- Learning Heading Section -->
+        <section>
+            <div class="container learning">
+                <h1>Let’s Learn About Sentiment Analysis</h1>
+            </div>
+        </section>
+
+
+        <!-- Learning Journey Section -->
+        <section>
+            <div class="container sentiment-desc even-sec">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>
+                            What is Lorem Ipsum?
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries,
+                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages,
+                            and more recently with desktop publishing software like Aldus PageMaker including versions
+                            of
+                            Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./images/shock.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 2nd learning section -->
+        <section>
+            <div class="container-fluid alter-sec">
+
+                <div class="container sentiment-desc">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./images/sad.png" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h1>
+                                Where does it come from?
+                            </h1>
+                            <p>
+                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                                piece
+                                of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+                                McClintock,
+                                a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
+                                obscure
+                                Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
+                                word in classical literature, discovered the undoubtable source
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus non vero natus iure
+                                dolor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Learning Journey Section 3 -->
+        <section>
+            <div class="container sentiment-desc even-sec">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>
+                            Where can I get some?
+                        </h1>
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been
+                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley
+                            of type and scrambled it to make a type specimen book. It has survived not only five
+                            centuries,
+                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
+                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                            passages,
+                            and more recently with desktop publishing software like Aldus PageMaker including versions
+                            of
+                            Lorem Ipsum.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="./images/happy.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container-fluid alter-sec">
+                <div class="container sentiment-desc">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./images/shock.png" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h1>
+                                Why do we use it?
+                            </h1>
+                            <p>
+                                It is a long established fact that a reader will be distracted by the readable content
+                                of a
+                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
+                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
+                                here', making it look like readable English. Many desktop publishing packages and web
+                                page
+                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
+                                will
+                                uncover many web sites still in their infancy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <script src="js/canvasjs.min.js"></script>
     <script src='js/sentiment-analysis.js'></script>
-    <!-- <script src='js/test.js'></script> -->
 </body>
+<footer>
+    <div class="container-fluid">
+        <p>Made with ❤️ from team Geaks &copy; 2022</p>
+    </div>
+
+</footer>
+
 
 </html>
