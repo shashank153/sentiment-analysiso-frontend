@@ -14,6 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
+
+    <link rel="stylesheet" href="style/sentiment-analysis.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
@@ -53,9 +55,12 @@
                         <div>
                             <span id="hash">#</span>
                             <input data-intro="Enter in the any twitter hashtag here" data-position="right" type="text"
-                            id="tag-input" placeholder="Enter in a hashtag here" name="input-tag">
-                            <button class="btn btn-lg btn-dark btn-search" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">Search</button>
+                                id="tag-input" placeholder="Enter in a hashtag here" name="input-tag">
+                            <!-- <button class="btn btn-lg btn-dark btn-search" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Search</button> -->
+                            <button class="btn btn-lg btn-dark btn-search" data-bs-toggle="collapse"
+                                href="#collapseExample" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">Search</button>
                         </div>
                     </div>
                 </div>
@@ -64,64 +69,67 @@
 
         <!-- Sentiment analysis section -->
         <section>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Sentiment analysis using recent tweet for keyword entered...</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                        <div class="container-fluid" id="test">
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-center">
-                                    <div class="spinner-border text-danger" role="status">
-                                        <span class="visually-hidden">Loading...</span>
-                                    </div>
+                        </div> -->
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <div class="container" id="test">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-center">
+                                <div class="spinner-border text-danger" role="status">
+                                    <span class="visually-hidden">Loading...</span>
                                 </div>
-                                <div class="col-12 col-md-6">
-                                    <div id="chartContainer"></div>
-                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div id="chartContainer"></div>
+                            </div>
 
-                                <div class="col-12 col-md-6 text-center">
-                                    <div id="tweet-list" class="text-left d-none">
-                                        <ul class="nav nav-tabs" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="positive-tab" data-toggle="tab"
-                                                    href="#positive" role="tab" aria-controls="positive"
-                                                    aria-selected="true">
-                                                    Positive <span id="positive-counter"></span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="neutral-tab" data-toggle="tab" href="#neutral"
-                                                    role="tab" aria-controls="neutral" aria-selected="false">
-                                                    Neutral <span id="neutral-counter"></span>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="negative-tab" data-toggle="tab" href="#negative"
-                                                    role="tab" aria-controls="negative" aria-selected="false">
-                                                    Negative <span id="negative-counter"></span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="positive" role="tabpanel"
-                                                aria-labelledby="positive-tab"></div>
-                                            <div class="tab-pane fade" id="neutral" role="tabpanel"
-                                                aria-labelledby="neutral-tab"></div>
-                                            <div class="tab-pane fade" id="negative" role="tabpanel"
-                                                aria-labelledby="negative-tab">
-                                            </div>
+                            <div class="col-12 col-md-6 text-center">
+                                <div id="tweet-list" class="text-left d-none">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="positive-tab" data-toggle="tab"
+                                                href="#positive" role="tab" aria-controls="positive"
+                                                aria-selected="true">
+                                                Positive <span id="positive-counter"></span>
+                                                
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="neutral-tab" data-toggle="tab" href="#neutral"
+                                                role="tab" aria-controls="neutral" aria-selected="false">
+                                                Neutral <span id="neutral-counter"></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="negative-tab" data-toggle="tab" href="#negative"
+                                                role="tab" aria-controls="negative" aria-selected="false">
+                                                Negative <span id="negative-counter"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="positive" role="tabpanel"
+                                            aria-labelledby="positive-tab"></div>
+                                        <div class="tab-pane fade" id="neutral" role="tabpanel"
+                                            aria-labelledby="neutral-tab"></div>
+                                        <div class="tab-pane fade" id="negative" role="tabpanel"
+                                            aria-labelledby="negative-tab">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- </div>
+                </div> -->
                 </div>
-            </div>
         </section>
 
         <!-- Learning Heading Section -->
@@ -138,25 +146,23 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1>
-                            What is Lorem Ipsum?
+                            What is Sentiment Analysis?
                         </h1>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley
-                            of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries,
-                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages,
-                            and more recently with desktop publishing software like Aldus PageMaker including versions
-                            of
-                            Lorem Ipsum.
+                            Sentiment analysis is a kind of data mining where you measure the inclination of people’s
+                            opinions by using NLP (natural language processing), text analysis, and computational
+                            linguistics. We perform sentiment analysis mostly on public reviews, social media platforms,
+                            and similar sites.<br />
+                            Sentiment analysis is the use of natural language processing, text analysis, computational
+                            linguistics, and biometrics to
+                            systematically identify, extract, quantify, and study affective states and subjective
+                            information. Sentiment analysis is widely applied to voice of the customer materials such as
+                            reviews and survey responses, online and social media, and healthcare materials for
+                            applications that range from marketing to customer service to clinical medicine.
                         </p>
                     </div>
-                    <div class="col-md-6">
-                        <img src="./images/shock.png" alt="">
+                    <div class="col-md-6" style="margin-top: 130px;">
+                        <img src="./images/sentiement analysis.png" alt="sentiment analysis image" style="height: 60%">
                     </div>
                 </div>
             </div>
@@ -168,23 +174,17 @@
                 <div class="container sentiment-desc">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="./images/sad.png" alt="">
+                            <img src="./images/positive emotion.png" alt="">
                         </div>
                         <div class="col-md-6">
                             <h1>
-                                Where does it come from?
+                                What is positive sentiment?
                             </h1>
                             <p>
-                                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
-                                piece
-                                of classical Latin literature from 45 BC, making it over 2000 years old. Richard
-                                McClintock,
-                                a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more
-                                obscure
-                                Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the
-                                word in classical literature, discovered the undoubtable source
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus non vero natus iure
-                                dolor
+                                The approach is that counts the number of positive and negative words in the given
+                                dataset. If the number of positive words is greater than the negative words then the
+                                sentiment is positive else vice-versa. Automatic Approach: This approach works on the
+                                machine learning technique.
                             </p>
                         </div>
                     </div>
@@ -197,25 +197,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <h1>
-                            Where can I get some?
+                            What is neutral sentiment?
                         </h1>
                         <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley
-                            of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries,
-                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages,
-                            and more recently with desktop publishing software like Aldus PageMaker including versions
-                            of
-                            Lorem Ipsum.
+                            Neutral sentiment includes a click or a scroll but has not follow through for a consumption.
+                            Ie someone just checked out the image.Neutral is the lack of sentiment and this category
+                            must be detected in sentiment analysis. In their work they used the geometric properties of
+                            Support Vector Machines to assist their classifiers separate the positives from the
+                            negatives
                         </p>
                     </div>
                     <div class="col-md-6">
-                        <img src="./images/happy.png" alt="">
+                        <img src="./images/neutral sentiment.png" alt="" style="width: 80%;height: 90%;">
                     </div>
                 </div>
             </div>
@@ -226,22 +219,19 @@
                 <div class="container sentiment-desc">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="./images/shock.png" alt="">
+                            <img src="./images/negative sentiment.png" alt="">
                         </div>
                         <div class="col-md-6">
                             <h1>
-                                Why do we use it?
+                                Why is negative sentiment?
                             </h1>
                             <p>
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a
-                                page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                                here', making it look like readable English. Many desktop publishing packages and web
-                                page
-                                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum'
-                                will
-                                uncover many web sites still in their infancy.
+                                Negative sentiment includes the chance to report, hide, block a post.A fact, situation,
+                                or experience that is negative is unpleasant, depressing, or harmful.
+
+                                Negative emotions can be described as any feeling which causes you to be miserable and
+                                sad. These emotions make you dislike yourself and others, and reduce your confidence and
+                                self-esteem, and general life satisfaction.
                             </p>
                         </div>
                     </div>
