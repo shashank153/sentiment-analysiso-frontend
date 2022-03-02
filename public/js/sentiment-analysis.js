@@ -1,15 +1,10 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const twitterapical =
-  "https://sentiment-analysis-backend-v1.herokuapp.com/getTweetData";
-  // "http://localhost:3000/getTweetData"
+const twitterapical = "https://sentiment-analysis-backend-v1.herokuapp.com/getTweetData";
 
 const HOSTED_URLS = {
-  queryTwitter: "../php/queryTwitter.php",
   model: "https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/model.json",
   metadata: "https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/metadata.json",
 };
 const LOCAL_URLS = {
-  queryTwitter: "../php/queryTwitter.php?q=",
   model: "https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/model.json",
   metadata: "https://storage.googleapis.com/tfjs-models/tfjs/sentiment_cnn_v1/metadata.json",
 };
