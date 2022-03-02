@@ -6,7 +6,7 @@
 .banner{
     background-color: #F5F5F5;
     padding: 20px 0 0;
-    height: 530px
+    height: 550px
 }
 
 #twitter-banner{
@@ -19,7 +19,7 @@
 .right-part h1{
     margin-top: 60px;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3.7rem;
     font-weight: 800;
     color: #f3c706;
 }
@@ -119,7 +119,7 @@ footer p{
 }
 
 #test{
-    margin-top: 20px;
+    margin-top: 50px;
     width: 100%;
     /* height: 600px */
 }
